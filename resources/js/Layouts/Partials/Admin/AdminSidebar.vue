@@ -72,15 +72,12 @@ const props = defineProps({
                                 'hover:bg-gray-100 dark:hover:bg-gray-700': !route().current('admin.destinations.index')
                             }"
                                 class="flex items-center p-2 text-base font-normal text-gray-900 transition duration-300 ease-in-out rounded-lg group dark:text-gray-200">
-                            <svg class="flex-shrink-0 w-6 h-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
-                                </path>
-                                <path
-                                    d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
-                                </path>
-                            </svg>
+                                <svg fill="#000000" width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg">
+                                <path d="M12.382 5.304 10.096 7.59l.006.02L11.838 14a.908.908 0 0 1-.211.794l-.573.573a.339.339 0 0 1-.566-.08l-2.348-4.25-.745-.746-1.97 1.97a3.311 3.311 0 0 1-.75.504l.44 1.447a.875.875 0 0 1-.199.79l-.175.176a.477.477 0 0 1-.672 0l-1.04-1.039-.018-.02-.788-.786-.02-.02-1.038-1.039a.477.477 0 0 1 0-.672l.176-.176a.875.875 0 0 1 .79-.197l1.447.438a3.322 3.322 0 0 1 .504-.75l1.97-1.97-.746-.744-4.25-2.348a.339.339 0 0 1-.08-.566l.573-.573a.909.909 0 0 1 .794-.211l6.39 1.736.02.006 2.286-2.286c.37-.372 1.621-1.02 1.993-.65.37.372-.279 1.622-.65 1.993z"/>
+                                </svg>
+
+
+
                             <span class="flex-1 ml-3 whitespace-nowrap">Destinos</span>
                             <span :class="{
                                 'animate-ping': route().current('admin.destinations.index'),
@@ -94,18 +91,13 @@ const props = defineProps({
 
 
                         <li>
-                            <Link :href="route('dashboard')"
+                            <Link :href="route('admin.tours.index')"
                                 class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
-                                </path>
-                                <path
-                                    d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
-                                </path>
+                                <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path fill="#000000" fill-rule="evenodd" d="M8.445 3.168a1 1 0 0 1 1.002-.062L15 5.882l5.553-2.776A1 1 0 0 1 22 4v12a1 1 0 0 1-.445.832l-6 4a1 1 0 0 1-1.002.062L9 18.118l-5.553 2.776A1 1 0 0 1 2 20V8a1 1 0 0 1 .445-.832l6-4zM5 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0v.001zm5 1a1 1 0 0 1-1-1 1 1 0 1 1 2 0v.001a1 1 0 0 1-1 1zm4.707-3.708a1 1 0 1 0-1.414 1.414L14.586 12l-1.293 1.293a1 1 0 0 0 1.414 1.414L16 13.414l1.293 1.293a1 1 0 0 0 1.414-1.414L17.414 12l1.293-1.293a1 1 0 0 0-1.414-1.414L16 10.586l-1.293-1.293z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="flex-1 ml-3 whitespace-nowrap">das</span>
+
+                            <span class="flex-1 ml-3 whitespace-nowrap">Tours</span>
                             <span
                                 class="inline-flex items-center justify-center w-5 h-5 p-1 ml-3 text-sm font-medium rounded-full text-primary-800 bg-primary-100">3</span>
                             </Link>

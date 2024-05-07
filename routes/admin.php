@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDestinationController;
+use App\Http\Controllers\Admin\AdminToursController;
 
 Route::middleware(['web', 'auth'])->group(function () {
     // Redirección desde /admin a /admin/dashboard
@@ -20,5 +21,12 @@ Route::middleware(['web', 'auth'])->group(function () {
             'create' => 'admin.destinations.create',
             'show' => 'admin.destinations.show',
             'edit' => 'admin.destinations.edit',
+        ]);
+    Route::resource('admin/tours', AdminToursController::class)
+        ->names([
+            'index' => 'admin.tours.index',
+            'create' => 'admin.tours.create',
+            'show' => 'admin.tours.show',
+            'edit' => 'admin.tours.edit',
         ]);
 });

@@ -98,13 +98,13 @@ const userNavigation = [
                 <NavLink :href="route('tours.index')" :active="route().current('tours.index')">
                     Tours
                 </NavLink>
-                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                <NavLink :href="route('destinos.index')" :active="route().current('destinos.index')">
                     Destinos
                 </NavLink>
 
                 <Popover class="relative">
                     <PopoverButton class="flex items-center text-sm font-semibold leading-6 text-gray-900 gap-x-1">
-                        Product
+                        Productos
                         <ChevronDownIcon class="flex-none w-5 h-5 text-gray-400" aria-hidden="true" />
                     </PopoverButton>
 
