@@ -17,5 +17,6 @@ Route::get('/', [GuestHomeController::class, 'index'])->name('home');
 
 Route::get('/tours', [GuestTourController::class, 'index'])->name('tours.index');
 //eliminar xd PUTO EL QUE LO LEA
+//PUTO EL Q LO LEA DE NUEVO :V NO JALA GUEST XD
 Route::get('/xd',[ElimiarController::class,'index'])->name('xd');
 Route::get('/lala',[TestController::class,'index'])->name('test');

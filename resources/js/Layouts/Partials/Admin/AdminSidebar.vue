@@ -103,6 +103,20 @@ const props = defineProps({
                             </Link>
                         </li>
 
+                        <li>
+                            <Link :href="route('admin.setting')"
+                                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
+                                <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <path fill="#000000" fill-rule="evenodd" d="M6.989 2.367a1 1 0 1 0-1.978-.264l-4.5 16a1 1 0 1 0 1.939.532l1.374-4.894L10 17.95l4.176-3.383L14.064 18.6a1 1 0 1 0 1.858-.79l-2-8a1 1 0 0 0-.956-.74H9.686L9.227 2.9a1 1 0 0 0-.978-.533zM8 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0zm5.243-2.879a1 1 0 0 0-.342-1.375l-2.5-1.5a1 1 0 0 0-1.157.01l-2.5 1.5a1 1 0 0 0-.342 1.375l2.5 3a1 1 0 0 0 1.499-.135l1.5-3a1 1 0 0 0-.158-1.375z" clip-rule="evenodd"/>
+</svg>
+
+
+                            <span class="flex-1 ml-3 whitespace-nowrap">Configuraciones</span>
+                            <span
+                                class="inline-flex items-center justify-center w-5 h-5 p-1 ml-3 text-sm font-medium rounded-full text-primary-800 bg-primary-100">3</span>
+                            </Link>
+                        </li>
+
 
                         <!-- <li>
                             <button type="button"

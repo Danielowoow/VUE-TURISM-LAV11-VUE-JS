@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDestinationController;
+use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminToursController;
 
 Route::middleware(['web', 'auth'])->group(function () {
@@ -29,4 +30,9 @@ Route::middleware(['web', 'auth'])->group(function () {
             'show' => 'admin.tours.show',
             'edit' => 'admin.tours.edit',
         ]);
+    Route::resource('admin/setting', AdminSettingController::class)
+        ->names([
+            'index' => 'admin.setting',
+        ]);
+    
 });
