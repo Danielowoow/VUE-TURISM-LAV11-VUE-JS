@@ -1,5 +1,11 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
+import AdminLayout from '@/Layouts/GuestLayout.vue';
+import TestToursForm from '@/Components/testToursForm.vue';
+
+// Definiendo las propiedades de la vista
+const props = defineProps({
+  tours: Array,
+});
 </script>
 
 
@@ -20,5 +26,11 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
                 </div>
             </div> <!-- Aquí incluye tu contenido de Livewire -->
         </section>
+
+        <h1>FORM DE TOURS</h1>
+        
+        
+        <!--<test-tours-form :tours="tours" />-->
+        
     </GuestLayout>
 </template>
