@@ -47,8 +47,17 @@
                     <span class="text-5xl font-bold tracking-tight text-gray-900">${{ tour.precio }}</span>
                     <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
                   </p>
-                  <!-- Formulario para enviar el ID del tour por GET --> 
-                  <a :href="`/tours/show?id=${tour.id}`" class="block w-full px-3 py-2 mt-10 text-sm font-semibold text-center text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">VER MAS DETALLES</a>
+                  <a :href="'/tours/' + tour.id + '/show'" class="block w-full px-3 py-2 mt-10 text-sm font-semibold text-center text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                      Ver Detalles del Tour
+                  </a>
+                  <div class="block w-full px-3 py-2 mt-10 text-sm font-semibold text-center text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">  
+                                      
+                  <Link :href="route('/tours/{tour}/show')"   >
+                  TEST GAAAAAAAAA
+                </Link>
+                  </div>
+                  
+
                   <p class="mt-6 text-xs leading-5 text-gray-600">todos los derechos reservados</p>
                 </div>
               </div>
@@ -63,6 +72,7 @@
 <script setup>
 import { ref } from 'vue';
 
+import { Link } from '@inertiajs/vue3'
 const tours = ref([]);
 
 // Recibiendo las propiedades de la vista

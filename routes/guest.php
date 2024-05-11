@@ -15,7 +15,7 @@ Route::get('/', [GuestHomeController::class, 'index'])->name('home');
 
 
 Route::get('/tours', [GuestTourController::class, 'index'])->name('tours.index');
-Route::get('/tours/{id}', [GuestTourController::class, 'show'])->name('tours.show');
+Route::get('/tours/{tour}/show', [GuestTourController::class, 'show'])->name('tours.show');
 
 
 //eliminar xd PUTO EL QUE LO LEA
