@@ -15,9 +15,6 @@ use App\Models\Restriction;
 
 class TourSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $tours = Tour::factory(25)->create();
@@ -47,9 +44,6 @@ class TourSeeder extends Seeder
             Restriction::factory(5)->create([
                 'tour_id' => $tour->id
             ]);
-
-
-
         }
     }
 }

@@ -23,5 +23,5 @@ class CategorySeeder extends Seeder
         Category::create([
             'name' => 'Selva'
         ]);
-    } // Add a closing brace here
+    } 
 }
