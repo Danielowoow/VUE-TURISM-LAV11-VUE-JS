@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\Guest\GuestHomeController;
 use App\Http\Controllers\Guest\GuestShoppingCartController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Guest\GuestSubscriberController;
 use Inertia\Inertia;
 
 
@@ -33,6 +34,10 @@ Route::get('/cart', [GuestShoppingCartController::class, 'index'])->name('cart.i
 //Rutas Destinos
 Route::get('/destinations', [GuestDestinationController::class, 'index'])->name('destinations.index');
 
+
+
+//
+Route::post('/subscribe', [GuestSubscriberController::class, 'store']);
 
 
 //eliminar xd PUTO EL QUE LO LEA
