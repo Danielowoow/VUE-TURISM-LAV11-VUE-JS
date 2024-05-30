@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('max_personas');
             $table->integer('min_personas');
             $table->string('imagen'); 
+            //$table->enum('estatus', ['BORRADOR', 'REVISION', 'PUBLICADO', 'INACTIVO'])->default('BORRADOR');
             $table->enum('estatus',[Tour::BORRADOR, Tour::REVISION, Tour::PUBLICADO, Tour::INACTIVO])->default(Tour::BORRADOR);
             //campo para generar la url amigable
             $table->string('slug');
@@ -35,7 +36,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('price_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
             $table->foreign('price_id')->references('id')->on('prices')->onDelete('set null');
             $table->timestamps(); 
