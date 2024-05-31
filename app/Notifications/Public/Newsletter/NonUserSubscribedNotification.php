@@ -38,9 +38,19 @@ class NonUserSubscribedNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line('Thank you for subscribing! Consider becoming a client to get extra benefits.')
-            ->action('Learn More', url('/'))
-            ->line('Thank you for using our application!');
+        ->subject('¡Bienvenido a nuestro Newsletter de Turismo!')
+        ->greeting('¡Hola!')
+        ->line('Gracias por suscribirte a nuestro boletín. A partir de ahora, recibirás las mejores ofertas y novedades de destinos turísticos increíbles directamente en tu bandeja de entrada.')
+        ->line('Nos comprometemos a ofrecerte contenido de calidad, con recomendaciones exclusivas y consejos para que planifiques tus próximas vacaciones de la mejor manera.')
+        ->action('Visítanos', url('/'))
+        ->line('---')
+        ->line('Si en algún momento decides que ya no deseas recibir nuestras comunicaciones, puedes darte de baja haciendo clic en el siguiente enlace:')
+        ->action('Darse de baja', url('/unsubscribe'))
+        ->line('---')
+        ->line('Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos.')
+        ->line('¡Esperamos que disfrutes de nuestras noticias y ofertas!')
+        ->salutation('Atentamente,')
+        ->salutation('El equipo de Soporte de Nuestra Empresa');
     }
 
     /**

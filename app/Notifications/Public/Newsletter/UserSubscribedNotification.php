@@ -37,9 +37,19 @@ class UserSubscribedNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line('Thank you for subscribing! Since you are a client, you get extra benefits!')
-                    ->action('View Account', url('/'))
-                    ->line('Thank you for using our application!');
+        ->subject('¡Gracias por seguir confiando en nosotros!')
+        ->greeting('¡Hola!')
+        ->line('Queremos agradecerte por suscribirte a nuestro boletín. Como cliente valioso, recibirás acceso anticipado a ofertas exclusivas y noticias sobre nuestros mejores destinos turísticos.')
+        ->line('Nos alegra mucho poder seguir acompañándote en tus aventuras. Queremos recompensar tu lealtad ofreciéndote contenido especial y personalizado, con las mejores recomendaciones para tus próximas vacaciones.')
+        ->action('Explora nuestras ofertas', url('/'))
+        ->line('---')
+        ->line('Si en algún momento decides que ya no deseas recibir nuestras comunicaciones, puedes darte de baja haciendo clic en el siguiente enlace:')
+        ->action('Darse de baja', url('/unsubscribe'))
+        ->line('---')
+        ->line('Para cualquier consulta o asistencia, no dudes en contactarnos. Estamos aquí para ayudarte.')
+        ->line('¡Gracias por ser parte de nuestra comunidad!')
+        ->salutation('Atentamente,')
+        ->salutation('El equipo de Soporte de Nuestra Empresa');
     }
 
     /**

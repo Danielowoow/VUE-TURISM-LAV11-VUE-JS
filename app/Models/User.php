@@ -17,6 +17,12 @@ use Spatie\Permission\Traits\HasRoles;
 
 use Laravel\Cashier\Billable;
 
+
+use App\Observers\UserObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
+
+
+#[ObservedBy([UserObserver::class])]
 class User extends Authenticatable
 {
     use HasApiTokens;

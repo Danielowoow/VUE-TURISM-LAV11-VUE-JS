@@ -26,13 +26,15 @@ class SubscriberObserver
         } else {
             Log::info('No es cliente, despachando NonUserSubscribedNotificationJob');
             NonUserSubscribedNotificationJob::dispatch($subscriber);
+
         }
     }
+    
 
     /**
      * Handle the Subscriber "updated" event.
      */
-    public function updated(Subscriber $subscriber): void
+        public function updated(Subscriber $subscriber): void
     {
         //
     }

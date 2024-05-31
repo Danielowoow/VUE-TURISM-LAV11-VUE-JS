@@ -7,11 +7,20 @@ use Illuminate\Http\Request;
 
 use Inertia\Inertia;
 
+
+use App\Models\Destination;
+
 class GuestDestinationController extends Controller
 {
     public function index()
     {
-        return Inertia::render('public/destinations/Index');
+
+        $destination = Destination::paginate(1000);
+
+        return Inertia::render('public/destinations/Index', [
+            'tours' => $destination
+        ]);
+
     }
 
 }

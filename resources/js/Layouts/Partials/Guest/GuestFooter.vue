@@ -2,8 +2,6 @@
 import { ref } from 'vue';
 import { useForm } from '@inertiajs/vue3';
 
-
-
 const form = useForm({
     name: '',
     email: '',
@@ -24,9 +22,9 @@ const subscribe = () => {
             isLoading.value = false;
         },
         onError: (errors) => {
-            errorMessage.value = ' NONNOhave successfully subscribed.';
-            successMessage.value = '';
+            errorMessage.value = errors[0] || 'Ocurrió un error, intentelo más tarde';
             form.reset();
+            successMessage.value = '';
             isLoading.value = false;
         }
     });
@@ -224,7 +222,7 @@ const subscribe = () => {
                                 </button>
                             </div>
                             <p v-if="successMessage" class="mt-4 text-green-500">{{ successMessage }}</p>
-                            <p v-if="errorMessage" class="mt-4 text-green-500">{{ errorMessage }}</p>
+                            <p v-if="errorMessage" class="mt-4 text-red-500">{{ errorMessage }}</p>
                         </form>
 
 
@@ -232,8 +230,44 @@ const subscribe = () => {
                     </div>
                 </div>
             </div>
-
-            <div class="pt-6 mt-16 border-t border-gray-100 sm:flex sm:items-center sm:justify-between">
+            <div class="py-6 border-b border-gray-100 dark:border-gray-700 md:py-8">
+                <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+                    <div class="flex flex-wrap items-center gap-6 sm:justify-between">
+                        <img class="w-auto h-8 dark:hidden lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/paypal.svg" alt="" />
+                        <img class="hidden w-auto h-8 dark:block lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/paypal-dark.svg"
+                            alt="" />
+                        <img class="w-auto h-10 dark:hidden lg:h-11"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/stripe.svg" alt="" />
+                        <img class="hidden w-auto h-10 dark:block lg:h-11"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/stripe-dark.svg"
+                            alt="" />
+                        <img class="w-auto h-8 dark:hidden lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa.svg" alt="" />
+                        <img class="hidden w-auto h-8 dark:block lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa-dark.svg"
+                            alt="" />
+                        <img class="w-auto h-8 dark:hidden lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/mastercard.svg"
+                            alt="" />
+                        <img class="hidden w-auto h-8 dark:block lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/mastercard-dark.svg"
+                            alt="" />
+                        <img class="w-auto h-8 dark:hidden lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/shopify.svg" alt="" />
+                        <img class="hidden w-auto h-8 dark:block lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/shopify-dark.svg"
+                            alt="" />
+                        <img class="w-auto h-8 dark:hidden lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/bank-of-america.svg"
+                            alt="" />
+                        <img class="hidden w-auto h-8 dark:block lg:h-10"
+                            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/bank-of-america-dark.svg"
+                            alt="" />
+                    </div>
+                </div>
+                <div class="pt-6 mt-16 border-t border-gray-100 sm:flex sm:items-center sm:justify-between">
                 <p class="text-sm text-center text-gray-500 sm:text-left">
                     Copyright &copy; 2021 - . Desarrollado por
                     <a href="" target="_blank" rel="noopener noreferrer"></a>.
@@ -291,6 +325,9 @@ const subscribe = () => {
 
                 </ul>
             </div>
+            </div>
+
+
         </div>
     </footer>
 </template>
@@ -301,23 +338,28 @@ const subscribe = () => {
 <style scoped>
 /* Animación para el botón de carga */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 button:disabled span {
-  display: inline-block;
-  margin-left: 0.5rem;
+    display: inline-block;
+    margin-left: 0.5rem;
 }
 
 button:disabled span:before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 </style>
