@@ -29,6 +29,7 @@ Route::get('/tours/{tour:slug}', [GuestTourController::class, 'show'])->name('to
 //RUTAS  CART
 
 Route::get('/cart', [GuestShoppingCartController::class, 'index'])->name('cart.index');
+Route::post('/add-to-cart', [GuestShoppingCartController::class, 'addToCart'])->name('cart.add');
 
 
 //Rutas Destinos
