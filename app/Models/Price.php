@@ -10,9 +10,9 @@ class Price extends Model
     use HasFactory;
     protected $guarded = ['id'];
     //relacion uno a muchos hasMany
-    public function tours(){
-        return $this->hasMany(Tour::class);
-    }
+    // public function tours(){
+    //     return $this->hasMany(Tour::class);
+    // }
     
 
 }

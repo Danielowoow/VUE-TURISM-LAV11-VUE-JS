@@ -40,9 +40,9 @@ class TourFactory extends Factory
             'recomendaciones' => $this->faker->optional()->paragraph(),
             'precio' => $this->faker->randomFloat(2, 50, 1000), // Precio aleatorio entre 50 y 500
             'stock' => $this->faker->numberBetween(2, 50, 1000),
-            'user_id' => User::all()->random()->id, // Asigna un usuario aleatorio
+            //'user_id' => User::all()->random()->id, // Asigna un usuario aleatorio
             'category_id' => Category::all()->random()->id, // Asigna una categoria aleatoria
-            'price_id' => Price::all()->random()->id, // Asigna un precio aleatorio
+            //'price_id' => Price::all()->random()->id, // Asigna un precio aleatorio
         
         ];
     }

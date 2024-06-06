@@ -83,25 +83,25 @@ class Tour extends Model
 
 
     //relacion uno a muchos inversa
-    public function user_admin()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
+    // public function user_admin()
+    // {
+    //     return $this->belongsTo(User::class, 'user_id');
+    // }
     //relacion uno a muchos inversa
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
     //relacion uno a muchos inversa
-    public function price()
-    {
-        return $this->belongsTo(Price::class);
-    }
+    // public function price()
+    // {
+    //     return $this->belongsTo(Price::class);
+    // }
     //relacion muchos a muchos users
-    public function users()
-    {
-        return $this->belongsToMany(User::class);
-    }
+    // public function users()
+    // {
+    //     return $this->belongsToMany(User::class);
+    // }
     //relacion con la tabla de destinos
     public function destinations()
     {
