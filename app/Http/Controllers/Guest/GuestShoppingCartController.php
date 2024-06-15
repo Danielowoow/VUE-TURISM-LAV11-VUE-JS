@@ -10,16 +10,17 @@ use Inertia\Inertia;
 
 class GuestShoppingCartController extends Controller
 {
+    // index: Recupera y muestra los datos del carrito.
+    // addToCart: Agrega un tour al carrito.
+    // removeFromCart: Elimina un tour del carrito.
+    // updateCart: Actualiza la información de un tour en el carrito.
+    // clearCart: Vacía todo el carrito.
+    // getCartTotal: Calcula y devuelve el total del carrito.
+    
     public function index()
     {
-        // Obtener todos los datos almacenados en Redis
-        $redisData = Redis::connection()->hgetall('my_cart_data');
-
-        // Convertir los datos de Redis a un array asociativo
-        $cartData = [];
-        foreach ($redisData as $key => $value) {
-            $cartData[$key] = json_decode($value, true);
-        }
+        // Obtener todos los datos almacenados en la sesión
+        $cartData = session()->get('cart', []);
 
         // Pasar los datos recuperados a la vista
         return Inertia::render('public/cart/index', [
@@ -30,19 +31,18 @@ class GuestShoppingCartController extends Controller
     public function addToCart(Request $request)
     {
         $tour = $request->input('tour');
+        $tourId = $tour['id'];
 
-        // Generar una clave única para el tour en Redis (puedes ajustar esta lógica según tus necesidades)
-        $tourKey = 'tour_' . $tour['id'];
+        // Obtener el carrito actual de la sesión
+        $cart = session()->get('cart', []);
 
-        // Agregar el tour al carrito en Redis
-        Redis::connection()->hmset('my_cart_data', [
-            $tourKey => json_encode($tour)
-        ]);
+        // Agregar el tour al carrito
+        $cart[$tourId] = $tour;
+
+        // Guardar el carrito actualizado en la sesión
+        session(['cart' => $cart]);
 
         // Respondemos con un mensaje JSON indicando que el tour se ha agregado al carrito correctamente
         return Response::json(['message' => 'El tour se ha agregado al carrito correctamente.']);
     }
 }
-
-
-

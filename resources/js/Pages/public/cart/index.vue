@@ -71,24 +71,6 @@ const open = ref(false)
         
         <section>
         
-            <div class="container mx-auto">
-                <div class="grid grid-cols-1 gap-4">
-                    <!-- Iterar sobre los elementos del carrito -->
-                    <div v-for="(item, index) in cartData" :key="index" class="p-4 bg-white shadow-md">
-                        <p>Nombre: {{ item.title }}</p>
-                        <p>Precio: {{ item.precio }}</p>
-                        <p>Descripción Corta: {{ item.description_corta }}</p>
-                        <p>Hora de Inicio: {{ item.hora_inicio }}</p>
-                        <p>Personas Mínimas: {{ item.min_personas }}</p>
-                        <p>Hora de Fin: {{ item.hora_fin }}</p>
-                        <p>Personas Máximas: {{ item.max_personas }}</p>
-                        <p>Idioma: {{ item.idioma }}</p>
-                        <!-- Agrega más campos según sea necesario -->
-                    </div>
-                </div>
-            </div>
-            
-
             
 
           <div class="bg-white">
@@ -202,7 +184,35 @@ const open = ref(false)
                 </section>
               </form>
               
+              <div class="container mx-auto">
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Iterar sobre los elementos del carrito -->
+                    <div v-for="(item, index) in cartData" :key="index" class="p-4 bg-white shadow-md">
+                        <p>Nombre: {{ item.title }}</p>
+                        <p>Precio: {{ item.precio }}</p>
+                        <p>Descripción Corta: {{ item.description_corta }}</p>
+                        <p>Hora de Inicio: {{ item.hora_inicio }}</p>
+                        <p>Personas Mínimas: {{ item.min_personas }}</p>
+                        <p>Hora de Fin: {{ item.hora_fin }}</p>
+                        <p>Personas Máximas: {{ item.max_personas }}</p>
+                        <p>Idioma: {{ item.idioma }}</p>
+                        <!-- Agrega más campos según sea necesario -->
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+              
             </main>
+
+
+
+            
 
 
           </div>
